@@ -3,9 +3,9 @@
 
 require "vendor/autoload.php";
 
-$database = new Database;
+$container = new Container;
 
-$repository = new Repository($database);
+$repository = $container->get(Repository::class);
 
 $data = $repository->getAll();
 
