@@ -68,7 +68,6 @@ $games = $gameRepo->getAll();
 </head>
 <body>
     <span>
-        <img class="logo" src="/images/logo.png" alt="Logo">
         <ul class="nav">
             <li><a href="index.php">Home</a></li>
             <li><a href="games.php">Games</a></li>
