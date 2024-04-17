@@ -30,3 +30,52 @@ body {
     padding: 20px;
     font-size: 24px;
 }
+/* Additional CSS for games.php */
+
+.content {
+    margin: 20px;
+}
+
+.filter {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox */
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+
+.filter label {
+    font-weight: bold;
+}
+
+.filter select {
+    padding: 12px; 
+    font-size: 1.2em; 
+}
+
+
+.games-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.games-table th,
+.games-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.filter-btn {
+    margin-left: 10px;
+    min-width: 10vh; /* Set the minimum width */
+    min-height: 5vh; /* Set the minimum height */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #333;
+    color: white;
+    font-size: 1.2em;
+}
+
+
+

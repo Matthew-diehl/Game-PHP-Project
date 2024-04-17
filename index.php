@@ -4,9 +4,11 @@ require "vendor/autoload.php";
 
 $container = new Container;
 
-$repository = $container->get(GameRepository::class);
+$repository = $container->get(GenreRepository::class);
 
-$data = $repository->getAll("Farm");
+$data = $repository->getAll();
+
+// var_dump($data);
 
 ?>
 
@@ -20,7 +22,7 @@ $data = $repository->getAll("Farm");
     <span>
     <img class="logo" src="/images/logo.png" alt="Logo">
     <ul class="nav">
-        <li><a href="#games">Games</a></li>
+        <li><a href="games.php">Games</a></li>
         <li><a href="#customers">Customers</a></li>
         <li><a href="#employees">Employees</a></li>
     </ul>
