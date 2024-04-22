@@ -35,4 +35,36 @@ class GameRepository {
 
         return $results;
     }
+
+    public function createGame($game)
+{
+    $conn = $this->database->getConnection();
+
+    // Prepare the SQL statement
+    $stmt = sqlsrv_prepare(
+        $conn,
+        "INSERT INTO Game (Title, Price, Publisher, ReleaseDateTime, isDeleted)
+         VALUES (?,?,?,?,0)",
+         $game
+    );
+
+    // Check if the statement was prepared successfully
+    if ($stmt === false) {
+        // Handle error if the statement could not be prepared
+        die(print_r(sqlsrv_errors(), true)); // You can adjust the error handling based on your requirements
+    }
+
+    // Execute the SQL statement
+    $result = sqlsrv_execute($stmt);
+
+    // Check if the execution was successful
+    if ($result === false) {
+        // Handle error if the execution failed
+        die(print_r(sqlsrv_errors(), true)); // You can adjust the error handling based on your requirements
+    } else {
+        // Provide feedback on success
+        echo "Game created successfully!";
+    }
+}
+
 }
