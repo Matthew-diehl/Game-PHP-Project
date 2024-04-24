@@ -1,0 +1,11 @@
+<Files ".gitignore">
+    Deny from all
+</Files>
+
+<Files "composer.json">
+    Deny from all
+</Files>
+
+<Files "composer.lock">
+    Deny from all
+</Files>
