@@ -3,15 +3,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Now your PHP code follows...
-
 require "vendor/autoload.php";
 
 $container = new Container;
 
 $customerRepo = $container->get(CustomerRepository::class);
 
-$customers = $customerRepo->getAll(); // Assuming a method like getAll() in CustomerRepository
+$customers = $customerRepo->getAll();
 
 ?>
 
@@ -32,7 +30,7 @@ $customers = $customerRepo->getAll(); // Assuming a method like getAll() in Cust
     </span>
     <div class="content">
         <h1>Customers</h1>
-        <table class="customers-table"> <!-- Assuming you have a CSS class for styling -->
+        <table class="customers-table">
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -41,7 +39,6 @@ $customers = $customerRepo->getAll(); // Assuming a method like getAll() in Cust
                     <th>Phone</th>
                     <th>Vip Status</th>
                     <th>Action</th> <!-- New column header for the action button -->
-                    <!-- Add more table headers if needed -->
                 </tr>
             </thead>
             <tbody>

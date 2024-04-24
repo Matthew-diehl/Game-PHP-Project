@@ -28,7 +28,6 @@ if (isset($_POST['filter_games']) && isset($_POST['genre'])) {
         echo "<td>{$game['Title']}</td>";
         echo "<td>{$game['Price']}</td>";
         echo "<td>{$game['Publisher']}</td>";
-        // Add more table cells if needed
         echo "</tr>";
     }
 
@@ -165,7 +164,6 @@ $games = $gameRepo->getAll();
                     <th>Price</th>
                     <th>Publisher</th>
                     <th>Actions</th>
-                    <!-- Add more table headers if needed -->
                 </tr>
             </thead>
             <tbody>

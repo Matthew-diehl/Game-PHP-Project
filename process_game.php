@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Include the necessary dependencies
 require "vendor/autoload.php";
 
 // Initialize the container

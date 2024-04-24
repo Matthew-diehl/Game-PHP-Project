@@ -24,8 +24,8 @@ $gameRepo = $container->get(GameRepository::class);
         <div class="card">
         <h1 class="header-center">Game Details</h1>
             <?php
-                $GameId = $_GET['GameId']; // Make sure to sanitize this input
-                $gameDetails = $gameRepo->detailedView($GameId); // Call your detailedView function
+                $GameId = $_GET['GameId'];
+                $gameDetails = $gameRepo->detailedView($GameId); // Call detailedView function
             ?>
             <p><strong>Title:</strong> <?php echo $gameDetails['Title']; ?></p>
             <p><strong>Price:</strong> <?php echo $gameDetails['Price']; ?></p>

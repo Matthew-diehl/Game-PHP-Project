@@ -8,8 +8,6 @@ $repository = $container->get(GenreRepository::class);
 
 $data = $repository->getAll();
 
-// var_dump($data);
-
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +28,6 @@ $data = $repository->getAll();
     <div class="welcome">
         <h1>Welcome to My PHP Web App!</h1>
     </div>
-    <!-- Your content goes here -->
 </body>
 </html>
 
