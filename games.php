@@ -164,6 +164,7 @@ $games = $gameRepo->getAll();
                     <th>Title</th>
                     <th>Price</th>
                     <th>Publisher</th>
+                    <th>Actions</th>
                     <!-- Add more table headers if needed -->
                 </tr>
             </thead>
@@ -175,7 +176,7 @@ $games = $gameRepo->getAll();
                         echo "<td>{$game['Title']}</td>";
                         echo "<td>{$game['Price']}</td>";
                         echo "<td>{$game['Publisher']}</td>";
-                        // Add more table cells if needed
+                        echo "<td><a href='gameDetails.php?GameId={$game['GameId']}'>View Details</a></td>";
                         echo "</tr>";
                     }
                 ?>
