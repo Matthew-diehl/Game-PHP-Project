@@ -7,6 +7,7 @@ class GameRepository {
         $this->database = $database;
     }
 
+    // Used for task 3 Getting all games / Filtering by Genre
     public function getAll($genre = null): array
     {
         $conn = $this->database->getConnection();
@@ -36,6 +37,7 @@ class GameRepository {
         return $results;
     }
 
+    // Used for Task 1 Inserting New Games into the Database
     public function createGame($game)
 {
     $conn = $this->database->getConnection();

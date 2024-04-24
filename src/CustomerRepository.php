@@ -19,7 +19,7 @@ class CustomerRepository {
 
         return $results;
     }
-
+    // Set VIP Status for Task 2
     public function setVIP($CustomerId, $VipStatus)
 {
     // Determine the new VIP status
