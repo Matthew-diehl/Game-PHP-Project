@@ -40,6 +40,7 @@ $customers = $customerRepo->getAll(); // Assuming a method like getAll() in Cust
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Vip Status</th>
+                    <th>Action</th> <!-- New column header for the action button -->
                     <!-- Add more table headers if needed -->
                 </tr>
             </thead>
@@ -53,6 +54,7 @@ $customers = $customerRepo->getAll(); // Assuming a method like getAll() in Cust
                     echo "<td>{$customer['Email']}</td>";
                     echo "<td>{$customer['Phone']}</td>";
                     echo "<td>{$customer['VipStatus']}</td>";
+                    echo "<td><form action='set_vip.php' method='post'><input type='hidden' name='customerId' value='{$customer['CustomerId']}'><input type='hidden' name='vipStatus' value='{$customer['VipStatus']}'><button type='submit'>Set VIP</button></form></td>"; // Button to set VIP status
                     echo "</tr>";
                 }
             ?>
@@ -61,3 +63,4 @@ $customers = $customerRepo->getAll(); // Assuming a method like getAll() in Cust
     </div>
 </body>
 </html>
+

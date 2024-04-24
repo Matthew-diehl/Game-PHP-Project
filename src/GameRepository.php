@@ -51,7 +51,7 @@ class GameRepository {
     // Check if the statement was prepared successfully
     if ($stmt === false) {
         // Handle error if the statement could not be prepared
-        die(print_r(sqlsrv_errors(), true)); // You can adjust the error handling based on your requirements
+        die(print_r(sqlsrv_errors(), true)); 
     }
 
     // Execute the SQL statement
@@ -60,7 +60,7 @@ class GameRepository {
     // Check if the execution was successful
     if ($result === false) {
         // Handle error if the execution failed
-        die(print_r(sqlsrv_errors(), true)); // You can adjust the error handling based on your requirements
+        die(print_r(sqlsrv_errors(), true)); 
     } else {
         // Provide feedback on success
         echo "Game created successfully!";
