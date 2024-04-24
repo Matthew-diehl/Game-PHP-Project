@@ -3,9 +3,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Now your PHP code follows...
-
-
 require "vendor/autoload.php";
 
 $container = new Container;
@@ -81,7 +78,7 @@ $games = $gameRepo->getAll();
                         title: $("#title").val(),
                         price: $("#price").val(),
                         publisher: $("#publisher").val(),
-                        release_date: $("#release_date").val()
+                        release_date: $("#release_date").val().replace("T", " ") // Replace 'T' with space
                     };
                     // Submit the form data via AJAX
                     $.ajax({
@@ -125,7 +122,7 @@ $games = $gameRepo->getAll();
         <ul class="nav">
             <li><a href="index.php">Home</a></li>
             <li><a href="games.php">Games</a></li>
-            <li><a href="#customers">Customers</a></li>
+            <li><a href="customers.php">Customers</a></li>
             <li><a href="#employees">Employees</a></li>
         </ul>
     </span>

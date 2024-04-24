@@ -67,6 +67,18 @@ body {
     padding: 8px;
     text-align: left;
 }
+
+.customers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.customers-table th,
+.customers-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
 .filter-btn {
     margin-left: 10px;
     min-width: 10vh; /* Set the minimum width */

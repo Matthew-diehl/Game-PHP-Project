@@ -23,7 +23,7 @@ $data = $repository->getAll();
     <ul class="nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="games.php">Games</a></li>
-        <li><a href="#customers">Customers</a></li>
+        <li><a href="customers.php">Customers</a></li>
         <li><a href="#employees">Employees</a></li>
     </ul>
     </span>
