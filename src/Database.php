@@ -2,7 +2,7 @@
 
 class Database
 {
-    private string $configFile = 'config.ini'; // Updated to use config.ini
+    private string $configFile = 'config.ini';
 
     public function getConnection()
     {

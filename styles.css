@@ -135,3 +135,40 @@ body {
     background-color: #555; /* Darken the background color on hover */
 }
 
+.back-button {
+    position: relative;
+    margin-top: 20px; /* Adjust this margin as needed */
+    margin-left: 10px;
+    min-width: 10vh; /* Set the minimum width */
+    min-height: 5vh; /* Set the minimum height */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #333;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* Center the header */
+.header-center {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set height to 100% of viewport height */
+}
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 600px;
+    text-align: center; /* Center align content */
+}
+
+
+

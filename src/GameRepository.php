@@ -67,4 +67,74 @@ class GameRepository {
     }
 }
 
+public function detailedView($GameId)
+{
+    $conn = $this->database->getConnection();
+
+    $params = array($GameId);
+
+    // Prepare the SQL queries
+    $gameQuery = sqlsrv_prepare(
+        $conn,
+        "SELECT g.Title, g.Price, g.Publisher, g.ReleaseDateTime 
+        FROM Game AS g 
+        WHERE g.GameId = ?;",
+        $params
+    );
+
+    $genreQuery = sqlsrv_prepare(
+        $conn,
+        "SELECT gen.[Name]
+        FROM Genre AS gen 
+        INNER JOIN GameGenre AS gg ON gen.GenreId = gg.GenreId
+        INNER JOIN Game AS g ON gg.GameId = g.GameId
+        WHERE g.GameId = ?;",
+        $params
+    );
+
+    $platformQuery = sqlsrv_prepare(
+        $conn,
+        "SELECT p.[Name]
+        FROM [dbo].[Platform] AS p
+        INNER JOIN GamePlatform AS gp ON p.PlatformId = gp.PlatformId
+        INNER JOIN Game AS g ON gp.GameId = g.GameId
+        WHERE g.GameId = ?;",
+        $params
+    );
+
+    // Execute the queries
+    sqlsrv_execute($gameQuery);
+    sqlsrv_execute($genreQuery);
+    sqlsrv_execute($platformQuery);
+
+    // Fetch game details
+    $gameDetails = sqlsrv_fetch_array($gameQuery, SQLSRV_FETCH_ASSOC);
+
+    // Fetch genres
+    $genres = [];
+    while ($genre = sqlsrv_fetch_array($genreQuery, SQLSRV_FETCH_ASSOC)) {
+        $genres[] = $genre['Name'];
+    }
+
+    // Fetch platforms
+    $platforms = [];
+    while ($platform = sqlsrv_fetch_array($platformQuery, SQLSRV_FETCH_ASSOC)) {
+        $platforms[] = $platform['Name'];
+    }
+
+    // Construct the object
+    $result = [
+        'Title' => $gameDetails['Title'],
+        'Price' => $gameDetails['Price'],
+        'Publisher' => $gameDetails['Publisher'],
+        'ReleaseDateTime' => $gameDetails['ReleaseDateTime'],
+        'GenreList' => $genres,
+        'PlatformList' => $platforms
+    ];
+
+    // Return the data
+    return $result;
+}
+
+
 }
